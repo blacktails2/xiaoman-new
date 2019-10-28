@@ -1,3 +1,298 @@
 // 1. Import the initial variables
 @import "bulma.min";
 @import "../node_modules/bulma/sass/utilities/_all";
+
+@font-face {
+	font-family: "Legacy Serif Book";
+	src: url("../fonts/97c2c577-bf8e-4708-baff-001fd32f4d08.eot?#iefix");
+	src: url("../fonts/97c2c577-bf8e-4708-baff-001fd32f4d08.eot?#iefix") format("eot"), url("../fonts/1aa4f478-0211-4879-a4e6-a0be4a43e71e.woff2") format("woff2"), url("../fonts/54a75543-b5b3-45e1-81aa-b1ad5b50a901.woff") format("woff"), url("../fonts/dfbf3526-722f-44ca-8fc1-5b07cb575fd0.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Legacy Serif Book Italic";
+	src: url("../fonts/b5f110df-dc07-4adc-866a-ec62f641ac54.eot?#iefix");
+	src: url("../fonts/b5f110df-dc07-4adc-866a-ec62f641ac54.eot?#iefix") format("eot"), url("../fonts/1df5c56f-e7a0-44f6-8b60-45f5bbb438d0.woff2") format("woff2"), url("../fonts/5c11ea6e-da06-4fa6-b2b5-872a67579f4f.woff") format("woff"), url("../fonts/6103ef63-5116-480b-b304-6b5bb947cfee.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Legacy Serif Medium";
+	src: url("../fonts/a1c4b7ec-d8df-4b2a-9e93-d716a6027648.eot?#iefix");
+	src: url("../fonts/a1c4b7ec-d8df-4b2a-9e93-d716a6027648.eot?#iefix") format("eot"), url("../fonts/2f9a1521-0f15-4db8-aa61-a04506b6295d.woff2") format("woff2"), url("../fonts/c06e5802-c6d0-4006-9be5-b1c0bc8629bd.woff") format("woff"), url("../fonts/16669343-ea58-41d7-8210-3dae5252a89d.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Legacy Serif Medium Italic";
+	src: url("../fonts/341a7c5a-cbb2-4982-980b-0a4351c498b3.eot?#iefix");
+	src: url("../fonts/341a7c5a-cbb2-4982-980b-0a4351c498b3.eot?#iefix") format("eot"), url("../fonts/587a727c-a464-4ab4-8dc3-55a2306480f3.woff2") format("woff2"), url("../fonts/a2f3647f-f85d-4088-b934-d7e9551a9255.woff") format("woff"), url("../fonts/e008d5d6-3100-4717-8a57-9c983dd7e0b9.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: 'xiaoman icons';
+	src: url('../fonts/xiaoman-Regular.eot');
+	src: url("../fonts/xiaoman-Regular.eot") format("eot"), url("../fonts/xiaoman-Regular.woff2") format("woff2"), url("../fonts/xiaoman-Regular.woff") format("woff");
+}
+
+$eg-medium: 'Legacy Serif Medium',
+serif;
+$anime: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.6s;
+$jp-body: 'Legacy Serif Book',
+"I-OTF明朝オールドPro M",
+"IwaOMinPro-Md",
+serif;
+$jp-bold: 'Legacy Serif Medium',
+'PKizaKinryouStdN-Bold',
+"KOKizahashiKinryo-B",
+serif;
+$jp-thin: 'Legacy Serif Book',
+'PKizaKinryouStdN-Medium',
+"KOKizahashiKinryo-M",
+serif;
+$icon: 'xiaoman icons';
+$main: #CCC6AA;
+$whitegray: #DDD;
+$darkgray: #292823;
+
+html {
+	background: $main;
+}
+
+body {
+	overflow: hidden;
+}
+
+a {
+	color: inherit;
+}
+
+.menu-btn {
+	font-family: $icon;
+	position: absolute;
+	top: 30px;
+	left: 45px;
+	z-index: 999;
+	display: inline;
+	font-size: 32px;
+	transition: $anime;
+
+	&:hover {
+		opacity: 0.5;
+	}
+
+	@include tablet-only {
+		top: 15px;
+		left: 30px;
+	}
+
+	@include mobile {
+		top: 6px;
+		left: 20px;
+	}
+
+	&__btn--open {
+		&:after {
+			color: white;
+			content: "D";
+		}
+	}
+
+	&__btn--close {
+		&:after {
+			color: white;
+			content: "C";
+		}
+	}
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	display: none;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.9);
+
+	&__menu {
+		position: absolute;
+		top: 48%;
+		transform: translateY(-50%);
+		margin-left: 45px;
+	}
+}
+
+.content-index {
+	&__link {
+		font-size: 26px;
+		margin-bottom: 10px;
+		letter-spacing: 0.05em;
+		transition: anime;
+		color: white;
+		font-family: $jp-thin;
+
+		&:hover {
+			opacity: 0.5;
+		}
+
+		&--sub {
+			margin-top: -10px;
+			margin-bottom: 10px;
+			font-size: 18px;
+			letter-spacing: 0.05em;
+			margin-left: 27px;
+			transition: anime;
+			color: white;
+			font-family: $jp-bold;
+
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+.top {
+	background: url('../img/top.jpg') center center;
+	background-size: cover;
+	height: 90vh;
+}
+
+.logo {
+	position: absolute;
+	left: 35px;
+	top: 120px;
+
+	@include tablet-only {
+		left: 20px;
+	}
+
+	@include mobile {
+		bottom: auto;
+		left: 17px;
+		top: 100px;
+		width: 140px;
+	}
+}
+
+.social {
+	position: absolute;
+	right: 40px;
+	top: 35px;
+
+	@include tablet-only {
+		right: 25px;
+		top: 20px;
+	}
+
+	@include mobile {
+		right: 20px;
+		top: 18px;
+	}
+}
+
+.links {
+	&__icon {
+		transition: $anime;
+		margin-left: 10px;
+
+		&:hover {
+			opacity: 0.5;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.language {
+	font-family: $eg-medium;
+	color: white;
+	text-align: right;
+	margin-top: 10px;
+	letter-spacing: 0.2em;
+
+	&__select {
+		color: white;
+
+		&--inactive {
+			color: rgba(255, 255, 255, 0.5);
+			transition: $anime;
+
+			&:hover {
+				color: rgba(255, 255, 255, 1);
+			}
+		}
+	}
+
+	@include tablet {
+		margin-top: 5px;
+	}
+
+	@include mobile {
+		margin-top: 0;
+	}
+}
+
+.arrow-next {
+	height: 10vh;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+
+	&__content {
+		height: 48px;
+		width: 48px;
+		margin: 0 auto;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 1px;
+			height: 48px;
+			background-color: $darkgray;
+			transform-origin: top center;
+			animation: scrolling 2s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+		}
+
+		&:after {
+			content: '';
+			left: 50%;
+			transform: translateX(-50%) translateY(32px) rotate(45deg);
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-bottom: 1px solid $darkgray;
+			border-right: 1px solid $darkgray;
+
+		}
+	}
+}
+
+@keyframes scrolling {
+	0% {
+		transform: scaleY(0);
+		transform-origin: top center;
+	}
+
+	50% {
+		transform: scaleY(1);
+		transform-origin: top center;
+	}
+
+	51% {
+		transform: scaleY(1);
+		transform-origin: bottom center;
+	}
+
+	100% {
+		transform: scaleY(0);
+		transform-origin: bottom center;
+	}
+}
