@@ -47,6 +47,9 @@ $jp-thin: 'Legacy Serif Book',
 'PKizaKinryouStdN-Medium',
 "KOKizahashiKinryo-M",
 serif;
+$jp-gothic: 'Legacy Serif Book',
+'IwaGoNKnPro-Bd',
+sans-serif;
 $icon: 'xiaoman icons';
 $main: #CCC6AA;
 $whitegray: #DDD;
@@ -296,3 +299,65 @@ a {
 		transform-origin: bottom center;
 	}
 }
+
+.top-exhibit{
+	padding-top: 140px;
+	margin-bottom: 196px;
+}
+
+.head{
+	&__headline{
+		font-family: $jp-thin;
+		writing-mode: vertical-rl;
+		font-size: 28pt;
+	}
+}
+
+.devider{
+	height: 1px;
+	width: 100%;
+	background-color: $darkgray;
+}
+
+.top-about{
+	padding-top: 140px;
+}
+
+.about-info{
+	text-align: center;
+	margin-top: 56px;
+	margin-bottom: 140px;
+	&__title{
+		font-family: $jp-thin;
+		font-size: 28px;
+	}
+	&__detail{
+		font-family: $jp-body;
+		font-size: 15px;
+		line-height: 1.9;
+		margin-top: 28px;
+		margin-bottom: 28px;
+	}
+	&__link{
+		font-family: $jp-gothic;
+		font-size: 15px;
+		color: white;
+		background-color: $darkgray;
+		padding: 10px 15px;
+		transition: $anime;
+		letter-spacing: 1px;
+		&:hover{
+			color: rgba(255,255,255,0.5);
+		}
+	}
+}
+
+// .shops{
+// 	%__content{
+// 		height: 616px;
+// 	}
+// 	&__content--kyoto{
+// 		@extend shops
+// 	}
+// }
+

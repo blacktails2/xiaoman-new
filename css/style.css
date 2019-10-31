@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
 @-webkit-keyframes spinAround {
   from {
@@ -8245,3 +8246,44 @@ a {
   100% {
     transform: scaleY(0);
     transform-origin: bottom center; } }
+
+.top-exhibit {
+  padding-top: 140px;
+  margin-bottom: 196px; }
+
+.head__headline {
+  font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
+  writing-mode: vertical-rl;
+  font-size: 28pt; }
+
+.devider {
+  height: 1px;
+  width: 100%;
+  background-color: #292823; }
+
+.top-about {
+  padding-top: 140px; }
+
+.about-info {
+  text-align: center;
+  margin-top: 56px;
+  margin-bottom: 140px; }
+  .about-info__title {
+    font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
+    font-size: 28px; }
+  .about-info__detail {
+    font-family: "Legacy Serif Book", "I-OTF明朝オールドPro M", "IwaOMinPro-Md", serif;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-top: 28px;
+    margin-bottom: 28px; }
+  .about-info__link {
+    font-family: "Legacy Serif Book", "IwaGoNKnPro-Bd", sans-serif;
+    font-size: 15px;
+    color: white;
+    background-color: #292823;
+    padding: 10px 15px;
+    transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.6s;
+    letter-spacing: 1px; }
+    .about-info__link:hover {
+      color: rgba(255, 255, 255, 0.5); }
