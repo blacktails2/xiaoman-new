@@ -438,7 +438,7 @@ a strong {
 }
 
 a:hover {
-	color: #363636
+	color: inherit
 }
 
 code {
@@ -10580,9 +10580,4 @@ print {
 	.section.is-large {
 		padding: 18rem 1.5rem
 	}
-}
-
-.footer {
-	background-color: #fafafa;
-	padding: 3rem 1.5rem 6rem
 }

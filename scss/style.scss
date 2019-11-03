@@ -2,6 +2,14 @@
 @import "bulma.min";
 @import "../node_modules/bulma/sass/utilities/_all";
 
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=6917bb16-80ea-4968-be19-e884fc22d931");
+
+@font-face {
+	font-family: "Legacy Sans Bold";
+	src: url("../fonts/67924566-137a-47b0-8db9-9e94d74e6bc0.eot?#iefix");
+	src: url("../fonts/67924566-137a-47b0-8db9-9e94d74e6bc0.eot?#iefix") format("eot"), url("../fonts/7041531a-9077-42ac-93b5-f7b4d980f02f.woff2") format("woff2"), url("../fonts/6aad48c7-e032-4f46-b684-9dfdf49c012d.woff") format("woff"), url("../fonts/7f459054-cdf4-4014-bb5f-ffa0a5d71b71.ttf") format("truetype");
+}
+
 @font-face {
 	font-family: "Legacy Serif Book";
 	src: url("../fonts/97c2c577-bf8e-4708-baff-001fd32f4d08.eot?#iefix");
@@ -16,14 +24,8 @@
 
 @font-face {
 	font-family: "Legacy Serif Medium";
-	src: url("../fonts/a1c4b7ec-d8df-4b2a-9e93-d716a6027648.eot?#iefix");
-	src: url("../fonts/a1c4b7ec-d8df-4b2a-9e93-d716a6027648.eot?#iefix") format("eot"), url("../fonts/2f9a1521-0f15-4db8-aa61-a04506b6295d.woff2") format("woff2"), url("../fonts/c06e5802-c6d0-4006-9be5-b1c0bc8629bd.woff") format("woff"), url("../fonts/16669343-ea58-41d7-8210-3dae5252a89d.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "Legacy Serif Medium Italic";
-	src: url("../fonts/341a7c5a-cbb2-4982-980b-0a4351c498b3.eot?#iefix");
-	src: url("../fonts/341a7c5a-cbb2-4982-980b-0a4351c498b3.eot?#iefix") format("eot"), url("../fonts/587a727c-a464-4ab4-8dc3-55a2306480f3.woff2") format("woff2"), url("../fonts/a2f3647f-f85d-4088-b934-d7e9551a9255.woff") format("woff"), url("../fonts/e008d5d6-3100-4717-8a57-9c983dd7e0b9.ttf") format("truetype");
+	src: url("../fonts/b72c04ac-1f15-4003-ab26-7771ba0c803d.eot?#iefix");
+	src: url("../fonts/b72c04ac-1f15-4003-ab26-7771ba0c803d.eot?#iefix") format("eot"), url("../fonts/ffa139fb-5b6d-43a3-87db-8c159c485061.woff2") format("woff2"), url("../fonts/49c59da7-247d-4480-a552-73b3cf50e8d7.woff") format("woff"), url("../fonts/73c3c57a-bbd6-4031-a1bd-66dd932cf027.ttf") format("truetype");
 }
 
 @font-face {
@@ -34,7 +36,7 @@
 
 $eg-medium: 'Legacy Serif Medium',
 serif;
-$anime: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.6s;
+$anime: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s;
 $jp-body: 'Legacy Serif Book',
 "I-OTF明朝オールドPro M",
 "IwaOMinPro-Md",
@@ -47,8 +49,8 @@ $jp-thin: 'Legacy Serif Book',
 'PKizaKinryouStdN-Medium',
 "KOKizahashiKinryo-M",
 serif;
-$jp-gothic: 'Legacy Serif Book',
-'IwaGoNKnPro-Bd',
+$jp-gothic: "Legacy Sans Bold",
+'IwaOGoPro-Bd',
 sans-serif;
 $icon: 'xiaoman icons';
 $main: #CCC6AA;
@@ -65,6 +67,18 @@ body {
 
 a {
 	color: inherit;
+}
+
+.container {
+	@include tablet {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	@include mobile {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }
 
 .menu-btn {
@@ -99,6 +113,8 @@ a {
 	}
 
 	&__btn--close {
+		position: fixed;
+
 		&:after {
 			color: white;
 			content: "C";
@@ -127,26 +143,38 @@ a {
 
 .content-index {
 	&__link {
-		font-size: 26px;
-		margin-bottom: 10px;
+		font-size: 32px;
+		margin-bottom: 18px;
 		letter-spacing: 0.05em;
-		transition: anime;
+		transition: $anime;
 		color: white;
 		font-family: $jp-thin;
+
+		@include mobile {
+			font-size: 27px;
+			margin-bottom: 13px;
+		}
 
 		&:hover {
 			opacity: 0.5;
 		}
 
 		&--sub {
-			margin-top: -10px;
-			margin-bottom: 10px;
-			font-size: 18px;
+			margin-top: -18px;
+			margin-bottom: 18px;
+			font-size: 22px;
+			line-height: 1.8;
 			letter-spacing: 0.05em;
 			margin-left: 27px;
-			transition: anime;
+			transition: $anime;
 			color: white;
 			font-family: $jp-bold;
+
+			@include mobile {
+				font-size: 18px;
+				margin-top: -13px;
+				margin-bottom: 13px;
+			}
 
 			&:hover {
 				opacity: 0.5;
@@ -158,6 +186,7 @@ a {
 .top {
 	background: url('../img/top.jpg') center center;
 	background-size: cover;
+	background-position: center center;
 	height: 90vh;
 }
 
@@ -244,7 +273,7 @@ a {
 	-webkit-align-items: center;
 	align-items: center;
 	-webkit-justify-content: center;
-	        justify-content: center;
+	justify-content: center;
 
 	&__content {
 		height: 48px;
@@ -300,64 +329,1059 @@ a {
 	}
 }
 
-.top-exhibit{
+.top-exhibit {
 	padding-top: 140px;
 	margin-bottom: 196px;
-}
 
-.head{
-	&__headline{
-		font-family: $jp-thin;
-		writing-mode: vertical-rl;
-		font-size: 28pt;
+	@include mobile {
+		padding-top: 50px;
+		margin-bottom: 50px;
 	}
 }
 
-.devider{
+.head {
+	&__headline {
+		font-family: $jp-thin;
+		writing-mode: vertical-rl;
+		font-size: 28pt;
+
+		@include desktop {
+			transform: translateX(-15px);
+		}
+
+		@include mobile {
+			writing-mode: horizontal-tb;
+			text-align: center;
+			font-size: 24pt;
+		}
+	}
+}
+
+.exhibit-now {
+	margin-top: 56px;
+	display: flex;
+	align-items: flex-end;
+
+	@include mobile {
+		margin-top: 0;
+		display: block;
+	}
+
+	@include tablet-only {
+		display: block;
+	}
+
+	&:hover>.exhibit-now__image--taipei:after {
+		transform: matrix3d(1, 0, 0, 0,
+			0, 1, 0, 0,
+			0, 0, 1, 0,
+			0, 0, 0, 0.9);
+		opacity: 0.5;
+	}
+
+	&:hover>.exhibit-now__image--kyoto:after {
+		transform: matrix3d(1, 0, 0, 0,
+			0, 1, 0, 0,
+			0, 0, 1, 0,
+			0, 0, 0, 0.9);
+		opacity: 0.5;
+	}
+
+	%__image {
+		width: 100%;
+		height: 336px;
+		position: relative;
+		overflow: hidden;
+		background-color: $darkgray;
+
+		@include mobile {
+			height: 225px;
+		}
+
+		@media screen and(min-width: 450px) and (max-width: 768px) {
+			height: 300px;
+		}
+
+		&:after {
+			background-size: cover;
+			background-position: center center;
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			transition: $anime;
+			transform: matrix3d(1, 0, 0, 0,
+				0, 1, 0, 0,
+				0, 0, 1, 0,
+				0, 0, 0, 1);
+			will-change: transform;
+		}
+
+		&:hover:after {
+			transform: matrix3d(1, 0, 0, 0,
+				0, 1, 0, 0,
+				0, 0, 1, 0,
+				0, 0, 0, 0.9);
+			opacity: 0.5;
+		}
+
+		@media screen and(min-width: 1472px) {
+			height: 420px;
+		}
+	}
+
+	&__image {
+		&--taipei {
+			@extend %__image;
+
+			&:after {
+				background-image: url("../img/exkyoto.png");
+			}
+		}
+
+		&--kyoto {
+			@extend %__image;
+			z-index: 0;
+
+			&:after {
+				background-image: url("../img/exkyoto.png");
+			}
+		}
+	}
+}
+
+.exhibit-content {
+	background-color: $darkgray;
+	padding: 25px 32px;
+	position: relative;
+	margin-bottom: 28px;
+	z-index: 0;
+
+	@include touch {
+		padding: 15px;
+		margin-bottom: 50px;
+	}
+
+	&:before {
+		content: '';
+		z-index: 0;
+		position: absolute;
+		height: 30px;
+		width: 30px;
+		background-color: $darkgray;
+		top: 50%;
+		right: 0;
+		transform: translate(-50%, -50%) rotate(45deg);
+		transition: $anime;
+
+		@include touch {
+			display: none;
+		}
+	}
+
+	&:hover {
+		&:before {
+			transform: translate(50%, -50%) rotate(45deg);
+		}
+	}
+
+	&__place {
+		position: relative;
+		z-index: 1;
+		color: white;
+		font-family: $eg-medium;
+		font-size: 16px;
+		letter-spacing: 3px;
+		margin-bottom: 20px;
+		font-variant: small-caps;
+
+		@include touch {
+			margin-bottom: 15px;
+		}
+
+		&--right {
+			@extend .exhibit-content__place;
+			text-align: right;
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 1;
+		color: white;
+		font-family: $jp-thin;
+		font-size: 27px;
+		line-height: 1.3;
+		margin-bottom: 5px;
+
+		@include touch {
+			font-size: 21px;
+		}
+
+		&--right {
+			@extend .exhibit-content__title;
+			text-align: right;
+		}
+	}
+
+	&__period {
+		position: relative;
+		z-index: 1;
+		color: white;
+		font-family: $eg-medium;
+		font-size: 17px;
+		font-feature-settings: 'pnum'on, 'onum'on;
+		letter-spacing: 1px;
+
+		&--right {
+			@extend .exhibit-content__period;
+			text-align: right;
+		}
+	}
+
+	&--taipei {
+		@extend .exhibit-content;
+		margin-left: -150px;
+
+		@include touch {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	&--kyoto {
+		@extend .exhibit-content;
+		margin-right: -150px;
+		z-index: 2;
+
+		@include touch {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+.devider {
 	height: 1px;
 	width: 100%;
 	background-color: $darkgray;
 }
 
-.top-about{
+.top-about {
 	padding-top: 140px;
+
+	@include mobile {
+		padding-top: 75px;
+	}
 }
 
-.about-info{
+.about-info {
 	text-align: center;
 	margin-top: 56px;
 	margin-bottom: 140px;
-	&__title{
+
+	@include mobile {
+		margin-top: 25px;
+		margin-bottom: 75px;
+	}
+
+	&__title {
 		font-family: $jp-thin;
 		font-size: 28px;
+
+		@include mobile {
+			font-size: 21px;
+			line-height: 2.3;
+		}
 	}
-	&__detail{
+
+	&__detail {
 		font-family: $jp-body;
 		font-size: 15px;
 		line-height: 1.9;
 		margin-top: 28px;
 		margin-bottom: 28px;
+
+		@include mobile {
+			font-size: 14px;
+			line-height: 1.8;
+			margin-top: 0;
+			margin-bottom: 25px;
+		}
 	}
-	&__link{
+
+	&__link {
 		font-family: $jp-gothic;
 		font-size: 15px;
-		color: white;
-		background-color: $darkgray;
-		padding: 10px 15px;
+		color: $darkgray;
+		border: 1px solid $darkgray;
+		padding: 12px 20px 9px;
 		transition: $anime;
 		letter-spacing: 1px;
-		&:hover{
-			color: rgba(255,255,255,0.5);
+
+		&:hover {
+			background-color: $darkgray;
+			color: $main;
 		}
 	}
 }
 
-// .shops{
-// 	%__content{
-// 		height: 616px;
-// 	}
-// 	&__content--kyoto{
-// 		@extend shops
-// 	}
-// }
+.shops {
+	%__content {
+		height: 840px;
+		width: 100vw;
+		max-width: 100vw;
+		background-size: cover;
+		background-position: center;
+		position: relative;
 
+		@include mobile {
+			height: 100vh;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+
+		.container {
+			position: relative;
+			height: 100%;
+		}
+	}
+
+	&__content--taipei {
+		@extend %__content;
+		background-image: url(../img/taipei/storetop.jpg);
+	}
+
+	&__content--kyoto {
+		@extend %__content;
+		background-image: url(../img/kyoto/storetop.jpg);
+	}
+
+	&__content--class {
+		@extend %__content;
+		background-image: url(../img/class.jpg);
+	}
+}
+
+.shops-detail {
+	position: absolute;
+	bottom: 140px;
+
+	@include mobile {
+		bottom: 50px;
+		margin-right: 15px;
+	}
+
+	&__title {
+		color: white;
+		font-family: $jp-thin;
+		font-size: 48px;
+		position: relative;
+		display: inline-block;
+		padding-right: 16px;
+		margin-right: 14px;
+		float: left;
+		margin-bottom: 8px;
+
+		@include mobile {
+			font-size: 36px;
+			padding-right: 0;
+			margin-right: 0;
+			float: none;
+			margin-bottom: 0;
+			transform: translateX(-3px);
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: 1px;
+			height: 50px;
+			background-color: white;
+			right: 0;
+			top: 8px;
+
+			@include mobile {
+				display: none;
+			}
+		}
+
+		&--class {
+			color: white;
+			font-family: $jp-thin;
+			font-size: 42px;
+
+			@include mobile {
+				font-size: 36px;
+				transform: translateX(-3px);
+			}
+		}
+	}
+
+	&__type {
+		color: white;
+		font-family: $jp-bold;
+		font-size: 21px;
+		margin-top: 20px;
+
+		@include mobile {
+			margin-top: 0;
+			font-size: 18px;
+			margin-bottom: 50px;
+		}
+	}
+
+	&__info {
+		clear: left;
+		color: white;
+		font-size: 15px;
+		line-height: 1.9;
+		font-family: $jp-body;
+		margin-bottom: 28px;
+
+		@include mobile {
+			font-size: 14px;
+			line-height: 1.8;
+			margin-bottom: 25px;
+		}
+	}
+
+	&__link {
+		font-family: $jp-gothic;
+		font-size: 15px;
+		color: white;
+		border: 1px solid white;
+		padding: 12px 20px 9px;
+		transition: $anime;
+		letter-spacing: 1px;
+
+		&:hover {
+			background-color: white;
+			color: $darkgray;
+		}
+	}
+}
+
+.footer {
+	margin-top: 280px;
+
+	@include mobile {
+		margin-top: 200px;
+	}
+
+	&__devider {
+		width: 100%;
+		height: 1px;
+		background-color: $darkgray;
+		margin-bottom: 112px;
+
+		@include mobile {
+			margin-bottom: 50px;
+		}
+	}
+
+	&__logo {
+		display: block;
+		margin: 0 auto 84px;
+
+		@include mobile {
+			margin: 0 auto 50px;
+		}
+
+		path {
+			fill: $darkgray;
+		}
+	}
+
+	&__copyright {
+		font-family: 'Legacy Serif Book Italic', serif;
+		text-align: center;
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+}
+
+.footer-arrow {
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+
+	&__content {
+		height: 48px;
+		width: 48px;
+		margin: 0 auto 28px;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 1px;
+			height: 48px;
+			background-color: $darkgray;
+			transform-origin: top center;
+		}
+
+		&:after {
+			content: '';
+			left: 50%;
+			transform: translateX(-50%) translateY(-5px) rotate(45deg);
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-left: 1px solid $darkgray;
+			border-top: 1px solid $darkgray;
+
+		}
+	}
+}
+
+.index-content {
+	margin-bottom: 84px;
+
+	@include mobile {
+		margin-bottom: 25px;
+	}
+
+	&__title {
+		font-family: $jp-thin;
+		font-size: 21px;
+		margin-bottom: 28px;
+		transition: $anime;
+		border-bottom: 1px solid rgba(0, 0, 0, 0);
+		display: inline-block;
+
+		@include mobile {
+			font-size: 24px;
+			margin-bottom: 25px;
+		}
+
+		&:hover {
+			border-bottom: 1px solid $darkgray;
+		}
+	}
+
+	&__sub {
+		font-family: $jp-body;
+		font-size: 13px;
+		line-height: 1.5;
+		list-style: none;
+		margin-bottom: 9px;
+		transition: $anime;
+
+		@include mobile {
+			margin-bottom: 5px;
+		}
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}
+
+.footer-links {
+	text-align: center;
+	margin-bottom: 84px;
+
+	@include mobile {
+		margin-bottom: 75px;
+	}
+
+	&__icon {
+		transition: $anime;
+		margin-left: 10px;
+
+		&:hover {
+			opacity: 0.5;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		path {
+			fill: $darkgray;
+		}
+	}
+}
+
+// stores
+
+.store-top {
+	background-size: cover;
+	height: 100vh;
+	background-position: center center;
+	position: relative;
+
+	&--taipei {
+		@extend .store-top;
+		background-image: url(/img/taipei/storetop.jpg);
+	}
+
+	&--kyoto {
+		@extend .store-top;
+		background-image: url(/img/kyoto/storetop.jpg);
+	}
+
+	&--class {
+		@extend .store-top;
+		background-image: url(/img/class.jpg);
+	}
+
+	&--about {
+		@extend .store-top;
+		background-image: url(/img/about.jpg);
+	}
+}
+
+.store-info {
+	position: absolute;
+	bottom: 56px;
+	width: 100%;
+	text-align: center;
+
+	@include mobile {
+		bottom: 25px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	&__title {
+
+		color: white;
+		font-family: $jp-thin;
+		font-size: 48px;
+		position: relative;
+		margin-bottom: 0px;
+
+		@include mobile {
+			font-size: 36px;
+			margin-bottom: 100px;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: 50px;
+			height: 1px;
+			background-color: white;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0;
+
+			@include mobile {
+				display: none;
+			}
+		}
+	}
+
+	&__type {
+		color: white;
+		font-family: $jp-bold;
+		font-size: 21px;
+		margin-top: 10px;
+		margin-bottom: 28px;
+
+		@include mobile {
+			font-size: 18px;
+			margin-top: 0;
+			margin-bottom: 25px;
+		}
+	}
+
+	&__info {
+		clear: left;
+		color: white;
+		font-size: 15px;
+		line-height: 1.9;
+		font-family: $jp-body;
+
+		@include mobile {
+			font-size: 14px;
+			line-height: 1.8;
+		}
+	}
+}
+
+.store-exhibit {
+	padding-top: 140px;
+	margin-bottom: 196px;
+
+	@include mobile {
+		margin-top: 75px;
+		padding-top: 50px;
+		margin-bottom: 100px;
+	}
+
+	&-content {
+		margin-top: 56px;
+
+		@include mobile {
+			margin-top: 0;
+		}
+
+		&__image {
+			width: 100%;
+			margin-bottom: 56px;
+
+			@include mobile {
+				margin-bottom: 25px;
+			}
+		}
+
+		&__title {
+			font-family: $jp-thin;
+			font-size: 27px;
+			line-height: 1.3;
+			text-align: center;
+
+			@include mobile {
+				font-size: 21px;
+			}
+		}
+
+		&__period {
+			font-family: $eg-medium;
+			font-size: 18px;
+			text-align: center;
+			margin-bottom: 84px;
+			font-feature-settings: 'pnum'on, 'onum'on;
+			letter-spacing: 1px;
+
+			@include mobile {
+				margin-bottom: 50px;
+			}
+		}
+
+		&__link {
+			font-family: $jp-gothic;
+			font-size: 15px;
+			color: $darkgray;
+			border: 1px solid $darkgray;
+			padding: 12px 15px 12px;
+			transition: $anime;
+
+			&:hover {
+				background-color: $darkgray;
+				color: $main;
+			}
+
+			@include mobile {
+				padding: 12px 20px 12px;
+			}
+		}
+
+		&__info {
+			margin-top: -13px;
+			font-size: 15px;
+			line-height: 1.9;
+			font-family: $jp-body;
+
+			@include mobile {
+				margin-top: 0;
+				font-size: 14px;
+				line-height: 1.8;
+				margin-bottom: 25px;
+			}
+
+			@include tablet-only {
+				margin-bottom: 28px;
+			}
+		}
+	}
+}
+
+.space {
+	padding-top: 140px;
+	margin-bottom: 196px;
+
+	@include mobile {
+		margin-top: 75px;
+		margin-bottom: 100px;
+	}
+
+	&__image {
+		margin-top: 56px;
+
+		@include mobile {
+			margin-top: 0;
+			width: 100vw;
+			max-width: 100vw;
+			margin-left: calc(((100vw - 100%) / 2) * -1);
+			margin-right: calc(((100vw - 100%) / 2) * -1);
+		}
+	}
+}
+
+.access {
+	padding-top: 140px;
+
+	@include mobile {
+		margin-top: 75px;
+	}
+
+	&-content {
+		margin-top: 56px;
+
+		@include mobile {
+			margin-top: -12px;
+		}
+
+		&__info {
+			font-family: $jp-body;
+			font-size: 15px;
+			line-height: 1.9;
+			margin-bottom: 28px;
+
+			@include mobile {
+				font-size: 14px;
+				line-height: 1.8;
+				margin-bottom: 25px;
+			}
+		}
+
+		&__link {
+			font-family: $jp-gothic;
+			font-size: 15px;
+			color: $darkgray;
+			border: 1px solid $darkgray;
+			padding: 12px 15px 12px;
+			transition: $anime;
+
+			&:hover {
+				background-color: $darkgray;
+				color: $main;
+			}
+		}
+
+		&__map {
+			width: 100%;
+			height: 392px;
+
+			@include mobile {
+				width: 100vw;
+				max-width: 100vw;
+				height: 450px;
+				margin-left: calc(((100vw - 100%) / 2) * -1);
+				margin-right: calc(((100vw - 100%) / 2) * -1);
+			}
+		}
+	}
+}
+
+.class-info {
+	padding-top: 196px;
+
+	@include mobile {
+		padding-top: 125px;
+	}
+
+	&__detail {
+		font-size: 15px;
+		line-height: 1.9;
+		text-align: center;
+		font-family: $jp-body;
+		margin-bottom: 168px;
+
+		@include mobile {
+			margin-bottom: 50px;
+			font-size: 14px;
+			line-height: 1.8;
+			text-align: left;
+		}
+	}
+
+	&__attention {
+		margin-top: 25px;
+		font-size: 15px;
+		line-height: 1.9;
+		text-align: center;
+		font-family: $jp-body;
+
+		@include mobile {
+			font-size: 14px;
+			line-height: 1.8;
+			margin-top: 10px;
+		}
+	}
+}
+
+.class-links {
+	background-color: $darkgray;
+	padding: 20px 25px;
+	transition: $anime;
+	color: white;
+	position: relative;
+	cursor: pointer;
+
+	@include mobile {
+		padding: 12px 15px;
+	}
+
+	&:before {
+		content: attr(data-name)"";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		color: $darkgray;
+		background-color: $main;
+		padding: 5px 10px;
+		font-family: $jp-gothic;
+		opacity: 0;
+		transition: $anime;
+	}
+
+	&:hover {
+		color: rgba(255, 255, 255, 0.5);
+
+		&:before {
+			opacity: 1;
+		}
+	}
+
+	&--momogusa {
+		@extend .class-links;
+
+		&:before {
+			content: "→ 百草ホームページ";
+		}
+	}
+
+	&__title {
+		font-size: 27px;
+		font-family: $jp-thin;
+		margin-bottom: 25px;
+	}
+
+	&__detail {
+		font-size: 15px;
+		line-height: 1.6;
+		font-family: $jp-body;
+	}
+}
+
+.kurasi {
+	padding-top: 140px;
+	margin-bottom: 140px;
+
+	@include mobile {
+		padding-top: 125px;
+		margin-bottom: 100px;
+	}
+
+	&__detail {
+		margin-top: 56px;
+		font-family: $jp-body;
+		font-size: 15px;
+		line-height: 1.9;
+
+		@include mobile {
+			margin-top: 0;
+			font-size: 14px;
+			line-height: 1.8;
+		}
+	}
+}
+
+.xiaoman {
+	padding-top: 140px;
+
+	@include mobile {
+		padding-top: 75px;
+	}
+
+	&__photo {
+		margin-top: 56px;
+		align-items: flex-end;
+
+		@include mobile {
+			margin-top: 0;
+		}
+	}
+
+	&__detail {
+		margin-top: 56px;
+		font-size: 15px;
+		font-family: $jp-body;
+		line-height: 1.9;
+
+		@include mobile {
+			margin-top: 25px;
+		}
+	}
+}
+
+.xiaoman-name {
+	background-color: $darkgray;
+	padding: 25px 32px;
+	position: relative;
+	margin-bottom: 28px;
+	margin-right: -250px;
+
+	@include tablet-only {
+		margin-right: -200px;
+		padding: 15px;
+		margin-bottom: 25px;
+	}
+	@include mobile{
+		background: none;
+		margin-right: 0;
+		padding: 0;
+		margin-bottom: 0;
+	}
+
+	&__title {
+		text-align: right;
+		color: white;
+		font-family: $jp-thin;
+		font-size: 27px;
+		@include mobile{
+			color: black;
+			text-align: center;
+		}
+	}
+
+	&__sub {
+		font-family: $jp-bold;
+		font-size: 18px;
+		text-align: right;
+		color: white;
+		@include mobile{
+			font-size: 16px;
+			color: black;
+			text-align: center;
+		}
+	}
+}
+
+.xiaoman-image {
+	width: 100%;
+	height: 476px;
+	background-image: url(/img/profile.jpg);
+	background-size: cover;
+	background-position: center center;
+
+	@include tablet-only {
+		height: 392px;
+	}
+
+	@include mobile {
+		height: 250px;
+		width: 100vw;
+		max-width: 100vw;
+		margin-left: calc(((100vw - 100%) / 2) * -1);
+		margin-right: calc(((100vw - 100%) / 2) * -1);
+	}
+}
