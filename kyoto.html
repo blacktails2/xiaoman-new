@@ -68,25 +68,15 @@
 					</h3>
 				</div>
 				<div class="column store-exhibit-content">
-					<img class="store-exhibit-content__image" src="img/extai.png" alt="現在の台北小慢の展覧会の写真">
-					<h4 class="store-exhibit-content__title">沓沢佐知子展「水をゆく」</h4>
-					<p class="store-exhibit-content__period">2019. 1. 27 – 2.15</p>
+					<img class="store-exhibit-content__image" src="" alt="現在の台北小慢の展覧会の写真">
+					<h4 class="store-exhibit-content__title"></h4>
+					<p class="store-exhibit-content__period"></p>
 					<div class="columns">
 						<div class="column is-3 is-hidden-touch">
 							<a class="store-exhibit-content__link" href="">→ Facebook</a>
 						</div>
 						<div class="column">
 							<p class="store-exhibit-content__info">
-								京都小慢では、1月25日（金曜）〜2月4日（月曜）まで小慢セレクトの急須展を開催いたします。<br>
-								是非この機会にお気に入りの急須を見つけにいらしてくださいませ。<br>
-								※展示会期間中は定休日なしに営業いたします。<br>
-								《出品作家》<br>
-								大江憲一<br>
-								郡司庸久<br>
-								郡司慶子<br>
-								清水善行<br>
-								<br>
-								また26日（土曜）27（日曜）は、小慢のお茶に合わせ細川亜衣さんが茶葉料理をお作りくださり冬茶會を開きます。
 							</p>
 							<a href="" class="is-hidden-desktop store-exhibit-content__link">→ Facebook</a>
 						</div>
@@ -134,13 +124,13 @@
 						</div>
 						<div class="column is-5-desktop is-12-tablet">
 							<p class="access-content__info">
-								京都府京都市上京区幸神町313, 日本<br>
+								京都府京都市上京区幸神町313<br>
 								<br>
 								京阪電車 出町柳駅 5番出口から徒歩9分<br>
 								市営地下鉄烏丸線 今出川駅 3番出口から徒歩11分<br>
 								京都市バス 河原町今出川バス停から徒歩5分<br>
 								<br>
-								営業時間: 月曜日休 / 12時〜18時<br>
+								営業時間 月曜日定休 12:00 – 18:00<br>
 								Mail: xiaoman.@gmail.com
 							</p>
 							<a class="access-content__link" href="https://goo.gl/maps/wKYkwGAmCkbm7xTq7">→ Google Maps</a>
@@ -449,5 +439,31 @@ window.addEventListener('load', function() {
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPXRq0cIGmNHhF9ofN61bIZXqvQZa-cFY&callback=initializeMaps" async defer></script>
 <script>
  new WOW().init();
+</script>
+<script>
+	$.ajax({
+  url: 'https://xiaoman-tea.microcms.io/api/v1/top-exhibit-kyoto',
+  headers: { 'X-API-KEY': '618b7652-33cf-4ec6-b1ea-8158ad710524' }
+})
+.done(response => {
+  const exContent = $('.store-exhibit-content');
+
+  // 画像の挿入
+  exContent.find('.store-exhibit-content__image')
+    .attr('src', response['kyoto__image']['url']);
+  // タイトルの挿入
+  exContent.find('.store-exhibit-content__title')
+    .html(response['kyoto__title']);
+  // 開催期間の挿入
+  exContent.find('.store-exhibit-content__period')
+    .html(response['kyoto__period']);
+  // 詳細情報の挿入
+  exContent.find('.store-exhibit-content__info')
+    .html(response['kyoto__detail'].replace(/\n/g, '<br>'));
+  // Facebook リンクの挿入
+  exContent.find('.store-exhibit-content__link')
+    .attr('href', response['kyoto__link']);
+});
+</script>
 </script>
 </html>

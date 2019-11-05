@@ -422,6 +422,46 @@ new ClipboardJS('.copy');
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPXRq0cIGmNHhF9ofN61bIZXqvQZa-cFY&callback=initializeMaps" async defer></script>
 <script>
+	$.ajax({
+  url: 'https://xiaoman-tea.microcms.io/api/v1/top-exhibit-taipei',
+  headers: { 'X-API-KEY': '618b7652-33cf-4ec6-b1ea-8158ad710524' }
+})
+.done(response => {
+  const responseTaipei = JSON.parse(response);
+  const exTaipei = $('.exhibit-content--taipei');
+  
+  // 画像の挿入
+  $('.exhibit-now__image--taipei')
+    .prepend(`<img src="${responseTaipei['taipei__image']['url']}">`)
+  // タイトルの挿入
+  exTaipei.find('.exhibit-content__title')
+    .html(responseTaipei['taipei__title']);
+  // 開催期間の挿入
+  exTaipei.find('.exhibit-content__period')
+    .html(responseTaipei['taipei__period']);
+});
+
+// for Kyoto on index
+$.ajax({
+  url: 'https://xiaoman-tea.microcms.io/api/v1/top-exhibit-kyoto',
+  headers: { 'X-API-KEY': '618b7652-33cf-4ec6-b1ea-8158ad710524' }
+})
+.done(response => {
+  const responseKyoto = JSON.parse(response); 
+  const exKyoto  = $('.exhibit-content--kyoto');
+
+  // 画像の挿入
+  $('.exhibit-now__image--kyoto')
+    .prepend(`<img src="${responseKyoto['kyoto__image']['url']}">`)
+  // タイトルの挿入
+  exKyoto.find('.exhibit-content__title--right')
+    .html(responseKyoto['kyoto__title']);
+  // 開催期間の挿入
+  exKyoto.find('.exhibit-content__period--right')
+    .html(responseKyoto['kyoto__period']);
+});
+</script>
+<script>
  new WOW().init();
 </script>
 </html>

@@ -8299,46 +8299,16 @@ a {
   @media screen and (min-width: 769px) and (max-width: 1087px) {
     .exhibit-now {
       display: block; } }
-  .exhibit-now:hover > .exhibit-now__image--taipei:after {
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.9);
-    opacity: 0.5; }
-  .exhibit-now:hover > .exhibit-now__image--kyoto:after {
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.9);
-    opacity: 0.5; }
   .exhibit-now .exhibit-now__image--taipei, .exhibit-now .exhibit-now__image--kyoto {
-    width: 100%;
-    height: 336px;
-    position: relative;
     overflow: hidden;
     background-color: #292823; }
-    @media screen and (max-width: 768px) {
-      .exhibit-now .exhibit-now__image--taipei, .exhibit-now .exhibit-now__image--kyoto {
-        height: 225px; } }
-    @media screen and (min-width: 450px) and (max-width: 768px) {
-      .exhibit-now .exhibit-now__image--taipei, .exhibit-now .exhibit-now__image--kyoto {
-        height: 300px; } }
-    .exhibit-now .exhibit-now__image--taipei:after, .exhibit-now .exhibit-now__image--kyoto:after {
-      background-size: cover;
-      background-position: center center;
-      content: "";
-      position: absolute;
+    .exhibit-now .exhibit-now__image--taipei img, .exhibit-now .exhibit-now__image--kyoto img {
       width: 100%;
-      height: 100%;
       transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s;
-      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-      will-change: transform; }
-    .exhibit-now .exhibit-now__image--taipei:hover:after, .exhibit-now .exhibit-now__image--kyoto:hover:after {
-      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.9);
-      opacity: 0.5; }
-    @media screen and (min-width: 1472px) {
-      .exhibit-now .exhibit-now__image--taipei, .exhibit-now .exhibit-now__image--kyoto {
-        height: 420px; } }
-  .exhibit-now__image--taipei:after {
-    background-image: url("../img/exkyoto.png"); }
-  .exhibit-now__image--kyoto {
-    z-index: 0; }
-    .exhibit-now__image--kyoto:after {
-      background-image: url("../img/exkyoto.png"); }
+      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+      .exhibit-now .exhibit-now__image--taipei img:hover, .exhibit-now .exhibit-now__image--kyoto img:hover {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.9);
+        opacity: 0.5; }
 
 .exhibit-content, .exhibit-content--taipei, .exhibit-content--kyoto {
   background-color: #292823;

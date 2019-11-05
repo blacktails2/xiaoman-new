@@ -81,8 +81,8 @@
 							<a href="taipei.html#store-exhibit">
 								<div class="exhibit-content--taipei">
 									<p class="exhibit-content__place">Taipei</p>
-									<h5 class="exhibit-content__title">潮汕工夫茶茶具展&台灣六位陶藝家工夫茶作品展</h5>
-									<p class="exhibit-content__period">2019. 1. 27 – 2.15</p>
+									<h5 class="exhibit-content__title"></h5>
+									<p class="exhibit-content__period"></p>
 								</div>
 							</a>
 						</div>
@@ -92,8 +92,8 @@
 							<a href="kyoto.html#store-exhibit">
 								<div class="exhibit-content--kyoto">
 									<p class="exhibit-content__place--right">Kyoto</p>
-									<h5 class="exhibit-content__title--right">沓沢佐知子展「水をゆく」</h5>
-									<p class="exhibit-content__period--right">2019. 1. 27 – 2.15</p>
+									<h5 class="exhibit-content__title--right"></h5>
+									<p class="exhibit-content__period--right"></p>
 								</div>
 							</a>
 						</div>
@@ -110,8 +110,8 @@
 							<div class="exhibit-now__image--taipei"></div>
 							<div class="exhibit-content--taipei">
 								<p class="exhibit-content__place">Taipei</p>
-								<h5 class="exhibit-content__title">潮汕工夫茶茶具展&台灣六位陶藝家工夫茶作品展</h5>
-								<p class="exhibit-content__period">2019. 1. 27 – 2.15</p>
+								<h5 class="exhibit-content__title"></h5>
+								<p class="exhibit-content__period"></p>
 							</div>
 						</div>
 					</a>
@@ -122,8 +122,8 @@
 							<div class="exhibit-now__image--kyoto"></div>
 							<div class="exhibit-content--kyoto">
 								<p class="exhibit-content__place">Taipei</p>
-								<h5 class="exhibit-content__title">潮汕工夫茶茶具展&台灣六位陶藝家工夫茶作品展</h5>
-								<p class="exhibit-content__period">2019. 1. 27 – 2.15</p>
+								<h5 class="exhibit-content__title"></h5>
+								<p class="exhibit-content__period"></p>
 							</div>
 						</div>
 					</a>
@@ -283,6 +283,44 @@ window.addEventListener('load', function() {
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPXRq0cIGmNHhF9ofN61bIZXqvQZa-cFY&callback=initializeMaps" async defer></script>
 <script>
  new WOW().init();
+</script>
+<script>
+	$.ajax({
+  url: 'https://xiaoman-tea.microcms.io/api/v1/top-exhibit-taipei',
+  headers: { 'X-API-KEY': '618b7652-33cf-4ec6-b1ea-8158ad710524' }
+})
+.done(responseTaipei => {
+  const exTaipei = $('.exhibit-content--taipei');
+
+  // 画像の挿入
+  $('.exhibit-now__image--taipei')
+    .prepend(`<img src="${responseTaipei['taipei__image']['url']}">`)
+  // タイトルの挿入
+  exTaipei.find('.exhibit-content__title')
+    .html(responseTaipei['taipei__title']);
+  // 開催期間の挿入
+  exTaipei.find('.exhibit-content__period')
+    .html(responseTaipei['taipei__period']);
+});
+
+// for Kyoto on index
+$.ajax({
+  url: 'https://xiaoman-tea.microcms.io/api/v1/top-exhibit-kyoto',
+  headers: { 'X-API-KEY': '618b7652-33cf-4ec6-b1ea-8158ad710524' }
+})
+.done(responseKyoto => {
+  const exKyoto  = $('.exhibit-content--kyoto');
+
+  // 画像の挿入
+  $('.exhibit-now__image--kyoto')
+    .prepend(`<img src="${responseKyoto['kyoto__image']['url']}">`)
+  // タイトルの挿入
+  exKyoto.find('.exhibit-content__title--right')
+    .html(responseKyoto['kyoto__title']);
+  // 開催期間の挿入
+  exKyoto.find('.exhibit-content__period--right')
+    .html(responseKyoto['kyoto__period']);
+});
 </script>
 
 </html>
