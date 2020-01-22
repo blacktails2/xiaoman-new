@@ -374,20 +374,16 @@ a {
 	%__image {
 		overflow: hidden;
 		background-color: $darkgray;
+		display: flex;
 
 		img {
 			width: 100%;
+			height: 100%;
 			transition: $anime;
-			transform: matrix3d(1, 0, 0, 0,
-				0, 1, 0, 0,
-				0, 0, 1, 0,
-				0, 0, 0, 1);
+			will-change: transform;
 
 			&:hover {
-				transform: matrix3d(1, 0, 0, 0,
-					0, 1, 0, 0,
-					0, 0, 1, 0,
-					0, 0, 0, 0.9);
+				transform: scale(1.1);
 				opacity: 0.5;
 			}
 		}
@@ -454,6 +450,9 @@ a {
 		&--right {
 			@extend .exhibit-content__place;
 			text-align: right;
+			@include touch{
+				text-align: left;
+			}
 		}
 	}
 
@@ -473,6 +472,9 @@ a {
 		&--right {
 			@extend .exhibit-content__title;
 			text-align: right;
+			@include touch{
+				text-align: left;
+			}
 		}
 	}
 
@@ -488,6 +490,9 @@ a {
 		&--right {
 			@extend .exhibit-content__period;
 			text-align: right;
+			@include touch{
+				text-align: left;
+			}
 		}
 	}
 
@@ -918,8 +923,8 @@ a {
 		margin-bottom: 0px;
 
 		@include mobile {
-			font-size: 36px;
-			margin-bottom: 100px;
+			font-size: 27px;
+			margin-bottom: 10px;
 		}
 
 		&:after {

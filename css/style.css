@@ -8301,13 +8301,15 @@ a {
       display: block; } }
   .exhibit-now .exhibit-now__image--taipei, .exhibit-now .exhibit-now__image--kyoto {
     overflow: hidden;
-    background-color: #292823; }
+    background-color: #292823;
+    display: flex; }
     .exhibit-now .exhibit-now__image--taipei img, .exhibit-now .exhibit-now__image--kyoto img {
       width: 100%;
+      height: 100%;
       transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s;
-      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+      will-change: transform; }
       .exhibit-now .exhibit-now__image--taipei img:hover, .exhibit-now .exhibit-now__image--kyoto img:hover {
-        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.9);
+        transform: scale(1.1);
         opacity: 0.5; }
 
 .exhibit-content, .exhibit-content--taipei, .exhibit-content--kyoto {
@@ -8350,6 +8352,9 @@ a {
         margin-bottom: 15px; } }
     .exhibit-content__place--right {
       text-align: right; }
+      @media screen and (max-width: 1087px) {
+        .exhibit-content__place--right {
+          text-align: left; } }
   .exhibit-content__title, .exhibit-content__title--right {
     position: relative;
     z-index: 1;
@@ -8363,6 +8368,9 @@ a {
         font-size: 21px; } }
     .exhibit-content__title--right {
       text-align: right; }
+      @media screen and (max-width: 1087px) {
+        .exhibit-content__title--right {
+          text-align: left; } }
   .exhibit-content__period, .exhibit-content__period--right {
     position: relative;
     z-index: 1;
@@ -8373,6 +8381,9 @@ a {
     letter-spacing: 1px; }
     .exhibit-content__period--right {
       text-align: right; }
+      @media screen and (max-width: 1087px) {
+        .exhibit-content__period--right {
+          text-align: left; } }
   .exhibit-content--taipei {
     margin-left: -150px; }
     @media screen and (max-width: 1087px) {
@@ -8682,8 +8693,8 @@ a {
     margin-bottom: 0px; }
     @media screen and (max-width: 768px) {
       .store-info__title {
-        font-size: 36px;
-        margin-bottom: 100px; } }
+        font-size: 27px;
+        margin-bottom: 10px; } }
     .store-info__title:after {
       content: "";
       position: absolute;
