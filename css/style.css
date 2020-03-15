@@ -8129,7 +8129,7 @@ a {
     transform: translateY(-50%);
     margin-left: 45px; }
 
-.content-index__link {
+#jp .content-index__link {
   font-size: 32px;
   margin-bottom: 18px;
   letter-spacing: 0.05em;
@@ -8137,12 +8137,12 @@ a {
   color: white;
   font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif; }
   @media screen and (max-width: 768px) {
-    .content-index__link {
+    #jp .content-index__link {
       font-size: 27px;
       margin-bottom: 13px; } }
-  .content-index__link:hover {
+  #jp .content-index__link:hover {
     opacity: 0.5; }
-  .content-index__link--sub {
+  #jp .content-index__link--sub {
     margin-top: -18px;
     margin-bottom: 18px;
     font-size: 22px;
@@ -8153,11 +8153,42 @@ a {
     color: white;
     font-family: "Legacy Serif Medium", "PKizaKinryouStdN-Bold", "KOKizahashiKinryo-B", serif; }
     @media screen and (max-width: 768px) {
-      .content-index__link--sub {
+      #jp .content-index__link--sub {
         font-size: 18px;
         margin-top: -13px;
         margin-bottom: 13px; } }
-    .content-index__link--sub:hover {
+    #jp .content-index__link--sub:hover {
+      opacity: 0.5; }
+
+#en .content-index__link {
+  font-size: 32px;
+  margin-bottom: 18px;
+  letter-spacing: 0.05em;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s;
+  color: white;
+  font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif; }
+  @media screen and (max-width: 768px) {
+    #en .content-index__link {
+      font-size: 27px;
+      margin-bottom: 13px; } }
+  #en .content-index__link:hover {
+    opacity: 0.5; }
+  #en .content-index__link--sub {
+    margin-top: -18px;
+    margin-bottom: 18px;
+    font-size: 22px;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    margin-left: 27px;
+    transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s;
+    color: white;
+    font-family: "Legacy Serif Book Italic", serif; }
+    @media screen and (max-width: 768px) {
+      #en .content-index__link--sub {
+        font-size: 18px;
+        margin-top: -13px;
+        margin-bottom: 13px; } }
+    #en .content-index__link--sub:hover {
       opacity: 0.5; }
 
 .top {
@@ -8202,13 +8233,15 @@ a {
     margin-left: 0; }
 
 .language {
-  font-family: "Legacy Serif Medium", serif;
+  font-family: "Legacy Sans Bold", "IwaOGoPro-Bd", sans-serif;
   color: white;
   text-align: right;
   margin-top: 10px;
-  letter-spacing: 0.2em; }
+  letter-spacing: 0.1em;
+  font-size: 0.9em; }
   .language__select {
-    color: white; }
+    color: white;
+    margin-left: 5px; }
     .language__select--inactive {
       color: rgba(255, 255, 255, 0.5);
       transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s; }
@@ -8275,18 +8308,26 @@ a {
       padding-top: 50px;
       margin-bottom: 50px; } }
 
-.head__headline {
+#jp .head__headline, #tc .head__headline {
   font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
   writing-mode: vertical-rl;
   font-size: 28pt; }
   @media screen and (min-width: 1088px) {
-    .head__headline {
+    #jp .head__headline, #tc .head__headline {
       transform: translateX(-15px); } }
   @media screen and (max-width: 768px) {
-    .head__headline {
+    #jp .head__headline, #tc .head__headline {
       writing-mode: horizontal-tb;
       text-align: center;
       font-size: 24pt; } }
+
+#en .head__headline {
+  font-family: "Legacy Serif Book Italic", serif;
+  font-size: 28pt; }
+  @media screen and (max-width: 768px) {
+    #en .head__headline {
+      font-size: 24pt;
+      text-align: center; } }
 
 .exhibit-now {
   margin-top: 56px;
@@ -8312,17 +8353,17 @@ a {
         transform: scale(1.1);
         opacity: 0.5; }
 
-.exhibit-content, .exhibit-content--taipei, .exhibit-content--kyoto {
+#jp .exhibit-content, #jp .exhibit-content--taipei, #jp .exhibit-content--kyoto {
   background-color: #292823;
   padding: 25px 32px;
   position: relative;
   margin-bottom: 28px;
   z-index: 0; }
   @media screen and (max-width: 1087px) {
-    .exhibit-content, .exhibit-content--taipei, .exhibit-content--kyoto {
+    #jp .exhibit-content, #jp .exhibit-content--taipei, #jp .exhibit-content--kyoto {
       padding: 15px;
       margin-bottom: 50px; } }
-  .exhibit-content:before, .exhibit-content--taipei:before, .exhibit-content--kyoto:before {
+  #jp .exhibit-content:before, #jp .exhibit-content--taipei:before, #jp .exhibit-content--kyoto:before {
     content: '';
     z-index: 0;
     position: absolute;
@@ -8334,11 +8375,11 @@ a {
     transform: translate(-50%, -50%) rotate(45deg);
     transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s; }
     @media screen and (max-width: 1087px) {
-      .exhibit-content:before, .exhibit-content--taipei:before, .exhibit-content--kyoto:before {
+      #jp .exhibit-content:before, #jp .exhibit-content--taipei:before, #jp .exhibit-content--kyoto:before {
         display: none; } }
-  .exhibit-content:hover:before, .exhibit-content--taipei:hover:before, .exhibit-content--kyoto:hover:before {
+  #jp .exhibit-content:hover:before, #jp .exhibit-content--taipei:hover:before, #jp .exhibit-content--kyoto:hover:before {
     transform: translate(50%, -50%) rotate(45deg); }
-  .exhibit-content__place, .exhibit-content__place--right {
+  #jp .exhibit-content__place, #jp .exhibit-content__place--right {
     position: relative;
     z-index: 1;
     color: white;
@@ -8348,14 +8389,14 @@ a {
     margin-bottom: 20px;
     font-variant: small-caps; }
     @media screen and (max-width: 1087px) {
-      .exhibit-content__place, .exhibit-content__place--right {
+      #jp .exhibit-content__place, #jp .exhibit-content__place--right {
         margin-bottom: 15px; } }
-    .exhibit-content__place--right {
+    #jp .exhibit-content__place--right {
       text-align: right; }
       @media screen and (max-width: 1087px) {
-        .exhibit-content__place--right {
+        #jp .exhibit-content__place--right {
           text-align: left; } }
-  .exhibit-content__title, .exhibit-content__title--right {
+  #jp .exhibit-content__title, #jp .exhibit-content__title--right {
     position: relative;
     z-index: 1;
     color: white;
@@ -8364,14 +8405,14 @@ a {
     line-height: 1.3;
     margin-bottom: 5px; }
     @media screen and (max-width: 1087px) {
-      .exhibit-content__title, .exhibit-content__title--right {
+      #jp .exhibit-content__title, #jp .exhibit-content__title--right {
         font-size: 21px; } }
-    .exhibit-content__title--right {
+    #jp .exhibit-content__title--right {
       text-align: right; }
       @media screen and (max-width: 1087px) {
-        .exhibit-content__title--right {
+        #jp .exhibit-content__title--right {
           text-align: left; } }
-  .exhibit-content__period, .exhibit-content__period--right {
+  #jp .exhibit-content__period, #jp .exhibit-content__period--right {
     position: relative;
     z-index: 1;
     color: white;
@@ -8379,22 +8420,108 @@ a {
     font-size: 17px;
     font-feature-settings: "pnum" on, "onum" on;
     letter-spacing: 1px; }
-    .exhibit-content__period--right {
+    #jp .exhibit-content__period--right {
       text-align: right; }
       @media screen and (max-width: 1087px) {
-        .exhibit-content__period--right {
+        #jp .exhibit-content__period--right {
           text-align: left; } }
-  .exhibit-content--taipei {
+  #jp .exhibit-content--taipei {
     margin-left: -150px; }
     @media screen and (max-width: 1087px) {
-      .exhibit-content--taipei {
+      #jp .exhibit-content--taipei {
         margin-left: 0;
         margin-right: 0; } }
-  .exhibit-content--kyoto {
+  #jp .exhibit-content--kyoto {
     margin-right: -150px;
     z-index: 2; }
     @media screen and (max-width: 1087px) {
-      .exhibit-content--kyoto {
+      #jp .exhibit-content--kyoto {
+        margin-left: 0;
+        margin-right: 0; } }
+
+#en .exhibit-content, #en .exhibit-content--taipei, #en .exhibit-content--kyoto {
+  background-color: #292823;
+  padding: 25px 32px;
+  position: relative;
+  margin-bottom: 28px;
+  z-index: 0; }
+  @media screen and (max-width: 1087px) {
+    #en .exhibit-content, #en .exhibit-content--taipei, #en .exhibit-content--kyoto {
+      padding: 15px;
+      margin-bottom: 50px; } }
+  #en .exhibit-content:before, #en .exhibit-content--taipei:before, #en .exhibit-content--kyoto:before {
+    content: '';
+    z-index: 0;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: #292823;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s; }
+    @media screen and (max-width: 1087px) {
+      #en .exhibit-content:before, #en .exhibit-content--taipei:before, #en .exhibit-content--kyoto:before {
+        display: none; } }
+  #en .exhibit-content:hover:before, #en .exhibit-content--taipei:hover:before, #en .exhibit-content--kyoto:hover:before {
+    transform: translate(50%, -50%) rotate(45deg); }
+  #en .exhibit-content__place, #en .exhibit-content__place--right {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-family: "Legacy Serif Medium", serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    font-variant: small-caps; }
+    @media screen and (max-width: 1087px) {
+      #en .exhibit-content__place, #en .exhibit-content__place--right {
+        margin-bottom: 15px; } }
+    #en .exhibit-content__place--right {
+      text-align: right; }
+      @media screen and (max-width: 1087px) {
+        #en .exhibit-content__place--right {
+          text-align: left; } }
+  #en .exhibit-content__title, #en .exhibit-content__title--right {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-family: "Legacy Serif Book Italic", serif;
+    font-size: 30px;
+    line-height: 1.3;
+    margin-bottom: 5px; }
+    @media screen and (max-width: 1087px) {
+      #en .exhibit-content__title, #en .exhibit-content__title--right {
+        font-size: 21px; } }
+    #en .exhibit-content__title--right {
+      text-align: right; }
+      @media screen and (max-width: 1087px) {
+        #en .exhibit-content__title--right {
+          text-align: left; } }
+  #en .exhibit-content__period, #en .exhibit-content__period--right {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-family: "Legacy Serif Medium", serif;
+    font-size: 17px;
+    font-feature-settings: "pnum" on, "onum" on;
+    letter-spacing: 1px; }
+    #en .exhibit-content__period--right {
+      text-align: right; }
+      @media screen and (max-width: 1087px) {
+        #en .exhibit-content__period--right {
+          text-align: left; } }
+  #en .exhibit-content--taipei {
+    margin-left: -150px; }
+    @media screen and (max-width: 1087px) {
+      #en .exhibit-content--taipei {
+        margin-left: 0;
+        margin-right: 0; } }
+  #en .exhibit-content--kyoto {
+    margin-right: -150px;
+    z-index: 2; }
+    @media screen and (max-width: 1087px) {
+      #en .exhibit-content--kyoto {
         margin-left: 0;
         margin-right: 0; } }
 
@@ -8409,34 +8536,34 @@ a {
     .top-about {
       padding-top: 75px; } }
 
-.about-info {
+#jp .about-info {
   text-align: center;
   margin-top: 56px;
   margin-bottom: 140px; }
   @media screen and (max-width: 768px) {
-    .about-info {
+    #jp .about-info {
       margin-top: 25px;
       margin-bottom: 75px; } }
-  .about-info__title {
+  #jp .about-info__title {
     font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
     font-size: 28px; }
     @media screen and (max-width: 768px) {
-      .about-info__title {
+      #jp .about-info__title {
         font-size: 21px;
         line-height: 2.3; } }
-  .about-info__detail {
+  #jp .about-info__detail {
     font-family: "Legacy Serif Book", "I-OTF明朝オールドPro M", "IwaOMinPro-Md", serif;
     font-size: 15px;
     line-height: 1.9;
     margin-top: 28px;
     margin-bottom: 28px; }
     @media screen and (max-width: 768px) {
-      .about-info__detail {
+      #jp .about-info__detail {
         font-size: 14px;
         line-height: 1.8;
         margin-top: 0;
         margin-bottom: 25px; } }
-  .about-info__link {
+  #jp .about-info__link {
     font-family: "Legacy Sans Bold", "IwaOGoPro-Bd", sans-serif;
     font-size: 15px;
     color: #292823;
@@ -8444,7 +8571,46 @@ a {
     padding: 12px 20px 9px;
     transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s;
     letter-spacing: 1px; }
-    .about-info__link:hover {
+    #jp .about-info__link:hover {
+      background-color: #292823;
+      color: #CCC6AA; }
+
+#en .about-info {
+  text-align: center;
+  margin-top: 56px;
+  margin-bottom: 140px; }
+  @media screen and (max-width: 768px) {
+    #en .about-info {
+      margin-top: 25px;
+      margin-bottom: 75px; } }
+  #en .about-info__title {
+    font-family: "Legacy Serif Medium", serif;
+    font-size: 32px; }
+    @media screen and (max-width: 768px) {
+      #en .about-info__title {
+        font-size: 24px;
+        line-height: 2.3; } }
+  #en .about-info__detail {
+    font-family: "Legacy Serif Book", serif;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 28px;
+    margin-bottom: 28px; }
+    @media screen and (max-width: 768px) {
+      #en .about-info__detail {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-top: 0;
+        margin-bottom: 25px; } }
+  #en .about-info__link {
+    font-family: "Legacy Sans Bold", "IwaOGoPro-Bd", sans-serif;
+    font-size: 16px;
+    color: #292823;
+    border: 1px solid #292823;
+    padding: 12px 20px 9px;
+    transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s;
+    letter-spacing: 1px; }
+    #en .about-info__link:hover {
       background-color: #292823;
       color: #CCC6AA; }
 
@@ -8479,14 +8645,14 @@ a {
 .shops__content--class {
   background-image: url(../img/class.jpg); }
 
-.shops-detail {
+#jp .shops-detail {
   position: absolute;
   bottom: 140px; }
   @media screen and (max-width: 768px) {
-    .shops-detail {
+    #jp .shops-detail {
       bottom: 50px;
       margin-right: 15px; } }
-  .shops-detail__title {
+  #jp .shops-detail__title {
     color: white;
     font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
     font-size: 48px;
@@ -8497,14 +8663,14 @@ a {
     float: left;
     margin-bottom: 8px; }
     @media screen and (max-width: 768px) {
-      .shops-detail__title {
+      #jp .shops-detail__title {
         font-size: 36px;
         padding-right: 0;
         margin-right: 0;
         float: none;
         margin-bottom: 0;
         transform: translateX(-3px); } }
-    .shops-detail__title:after {
+    #jp .shops-detail__title:after {
       content: "";
       position: absolute;
       width: 1px;
@@ -8513,27 +8679,27 @@ a {
       right: 0;
       top: 8px; }
       @media screen and (max-width: 768px) {
-        .shops-detail__title:after {
+        #jp .shops-detail__title:after {
           display: none; } }
-    .shops-detail__title--class {
+    #jp .shops-detail__title--class {
       color: white;
       font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
       font-size: 42px; }
       @media screen and (max-width: 768px) {
-        .shops-detail__title--class {
+        #jp .shops-detail__title--class {
           font-size: 36px;
           transform: translateX(-3px); } }
-  .shops-detail__type {
+  #jp .shops-detail__type {
     color: white;
     font-family: "Legacy Serif Medium", "PKizaKinryouStdN-Bold", "KOKizahashiKinryo-B", serif;
     font-size: 21px;
     margin-top: 20px; }
     @media screen and (max-width: 768px) {
-      .shops-detail__type {
+      #jp .shops-detail__type {
         margin-top: 0;
         font-size: 18px;
         margin-bottom: 50px; } }
-  .shops-detail__info {
+  #jp .shops-detail__info {
     clear: left;
     color: white;
     font-size: 15px;
@@ -8541,11 +8707,11 @@ a {
     font-family: "Legacy Serif Book", "I-OTF明朝オールドPro M", "IwaOMinPro-Md", serif;
     margin-bottom: 28px; }
     @media screen and (max-width: 768px) {
-      .shops-detail__info {
+      #jp .shops-detail__info {
         font-size: 14px;
         line-height: 1.8;
         margin-bottom: 25px; } }
-  .shops-detail__link {
+  #jp .shops-detail__link {
     font-family: "Legacy Sans Bold", "IwaOGoPro-Bd", sans-serif;
     font-size: 15px;
     color: white;
@@ -8553,7 +8719,88 @@ a {
     padding: 12px 20px 9px;
     transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s;
     letter-spacing: 1px; }
-    .shops-detail__link:hover {
+    #jp .shops-detail__link:hover {
+      background-color: white;
+      color: #292823; }
+
+#en .shops-detail {
+  position: absolute;
+  bottom: 140px; }
+  @media screen and (max-width: 768px) {
+    #en .shops-detail {
+      bottom: 50px;
+      margin-right: 15px; } }
+  #en .shops-detail__title {
+    color: white;
+    font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
+    font-size: 48px;
+    position: relative;
+    display: inline-block;
+    padding-right: 16px;
+    margin-right: 14px;
+    float: left;
+    margin-bottom: 8px; }
+    @media screen and (max-width: 768px) {
+      #en .shops-detail__title {
+        font-size: 36px;
+        padding-right: 0;
+        margin-right: 0;
+        float: none;
+        margin-bottom: 0;
+        transform: translateX(-3px); } }
+    #en .shops-detail__title:after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 50px;
+      background-color: white;
+      right: 0;
+      top: 8px; }
+      @media screen and (max-width: 768px) {
+        #en .shops-detail__title:after {
+          display: none; } }
+    #en .shops-detail__title--class {
+      color: white;
+      font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
+      font-size: 42px; }
+      @media screen and (max-width: 768px) {
+        #en .shops-detail__title--class {
+          font-size: 36px;
+          transform: translateX(-3px); } }
+  #en .shops-detail__type {
+    color: white;
+    font-family: "Legacy Serif Medium", serif;
+    font-size: 21px;
+    margin-top: 20px;
+    font-variant: small-caps;
+    letter-spacing: 0.1em; }
+    @media screen and (max-width: 768px) {
+      #en .shops-detail__type {
+        margin-top: 0;
+        font-size: 18px;
+        margin-bottom: 50px; } }
+  #en .shops-detail__info {
+    max-width: 700px;
+    clear: left;
+    color: white;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: "Legacy Serif Book", "I-OTF明朝オールドPro M", "IwaOMinPro-Md", serif;
+    margin-bottom: 28px; }
+    @media screen and (max-width: 768px) {
+      #en .shops-detail__info {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 25px; } }
+  #en .shops-detail__link {
+    font-family: "Legacy Sans Bold", "IwaOGoPro-Bd", sans-serif;
+    font-size: 15px;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 20px 9px;
+    transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s;
+    letter-spacing: 1px; }
+    #en .shops-detail__link:hover {
       background-color: white;
       color: #292823; }
 
@@ -8614,12 +8861,12 @@ a {
       border-left: 1px solid #292823;
       border-top: 1px solid #292823; }
 
-.index-content {
+#jp .index-content {
   margin-bottom: 84px; }
   @media screen and (max-width: 768px) {
-    .index-content {
+    #jp .index-content {
       margin-bottom: 25px; } }
-  .index-content__title {
+  #jp .index-content__title {
     font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
     font-size: 21px;
     margin-bottom: 28px;
@@ -8627,12 +8874,12 @@ a {
     border-bottom: 1px solid rgba(0, 0, 0, 0);
     display: inline-block; }
     @media screen and (max-width: 768px) {
-      .index-content__title {
+      #jp .index-content__title {
         font-size: 24px;
         margin-bottom: 25px; } }
-    .index-content__title:hover {
+    #jp .index-content__title:hover {
       border-bottom: 1px solid #292823; }
-  .index-content__sub {
+  #jp .index-content__sub {
     font-family: "Legacy Serif Book", "I-OTF明朝オールドPro M", "IwaOMinPro-Md", serif;
     font-size: 13px;
     line-height: 1.5;
@@ -8640,9 +8887,40 @@ a {
     margin-bottom: 9px;
     transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s; }
     @media screen and (max-width: 768px) {
-      .index-content__sub {
+      #jp .index-content__sub {
         margin-bottom: 5px; } }
-    .index-content__sub:hover {
+    #jp .index-content__sub:hover {
+      opacity: 0.5; }
+
+#en .index-content {
+  margin-bottom: 84px; }
+  @media screen and (max-width: 768px) {
+    #en .index-content {
+      margin-bottom: 25px; } }
+  #en .index-content__title {
+    font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
+    font-size: 24px;
+    margin-bottom: 28px;
+    transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    display: inline-block; }
+    @media screen and (max-width: 768px) {
+      #en .index-content__title {
+        font-size: 27px;
+        margin-bottom: 25px; } }
+    #en .index-content__title:hover {
+      border-bottom: 1px solid #292823; }
+  #en .index-content__sub {
+    font-family: "Legacy Serif Book", "I-OTF明朝オールドPro M", "IwaOMinPro-Md", serif;
+    font-size: 15px;
+    line-height: 1.2;
+    list-style: none;
+    margin-bottom: 9px;
+    transition: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s; }
+    @media screen and (max-width: 768px) {
+      #en .index-content__sub {
+        margin-bottom: 5px; } }
+    #en .index-content__sub:hover {
       opacity: 0.5; }
 
 .footer-links {
@@ -8675,27 +8953,27 @@ a {
   .store-top--about {
     background-image: url(/img/about.jpg); }
 
-.store-info {
+#jp .store-info {
   position: absolute;
   bottom: 56px;
   width: 100%;
   text-align: center; }
   @media screen and (max-width: 768px) {
-    .store-info {
+    #jp .store-info {
       bottom: 25px;
       padding-left: 15px;
       padding-right: 15px; } }
-  .store-info__title {
+  #jp .store-info__title {
     color: white;
     font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
     font-size: 48px;
     position: relative;
     margin-bottom: 0px; }
     @media screen and (max-width: 768px) {
-      .store-info__title {
+      #jp .store-info__title {
         font-size: 27px;
         margin-bottom: 10px; } }
-    .store-info__title:after {
+    #jp .store-info__title:after {
       content: "";
       position: absolute;
       width: 50px;
@@ -8705,27 +8983,84 @@ a {
       transform: translateX(-50%);
       bottom: 0; }
       @media screen and (max-width: 768px) {
-        .store-info__title:after {
+        #jp .store-info__title:after {
           display: none; } }
-  .store-info__type {
+  #jp .store-info__type {
     color: white;
     font-family: "Legacy Serif Medium", "PKizaKinryouStdN-Bold", "KOKizahashiKinryo-B", serif;
     font-size: 21px;
     margin-top: 10px;
     margin-bottom: 28px; }
     @media screen and (max-width: 768px) {
-      .store-info__type {
+      #jp .store-info__type {
         font-size: 18px;
         margin-top: 0;
         margin-bottom: 25px; } }
-  .store-info__info {
+  #jp .store-info__info {
     clear: left;
     color: white;
     font-size: 15px;
     line-height: 1.9;
     font-family: "Legacy Serif Book", "I-OTF明朝オールドPro M", "IwaOMinPro-Md", serif; }
     @media screen and (max-width: 768px) {
-      .store-info__info {
+      #jp .store-info__info {
+        font-size: 14px;
+        line-height: 1.8; } }
+
+#en .store-info {
+  position: absolute;
+  bottom: 56px;
+  width: 100%;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    #en .store-info {
+      bottom: 25px;
+      padding-left: 15px;
+      padding-right: 15px; } }
+  #en .store-info__title {
+    color: white;
+    font-family: "Legacy Serif Book", "PKizaKinryouStdN-Medium", "KOKizahashiKinryo-M", serif;
+    font-size: 48px;
+    position: relative;
+    margin-bottom: 0px; }
+    @media screen and (max-width: 768px) {
+      #en .store-info__title {
+        font-size: 27px;
+        margin-bottom: 10px; } }
+    #en .store-info__title:after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 1px;
+      background-color: white;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0; }
+      @media screen and (max-width: 768px) {
+        #en .store-info__title:after {
+          display: none; } }
+  #en .store-info__type {
+    color: white;
+    font-family: "Legacy Serif Medium", "PKizaKinryouStdN-Bold", "KOKizahashiKinryo-B", serif;
+    font-size: 21px;
+    margin-top: 10px;
+    margin-bottom: 28px; }
+    @media screen and (max-width: 768px) {
+      #en .store-info__type {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 25px; } }
+  #en .store-info__info {
+    clear: left;
+    color: white;
+    font-size: 17px;
+    line-height: 1.5;
+    font-family: "Legacy Serif Book", "I-OTF明朝オールドPro M", "IwaOMinPro-Md", serif;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (max-width: 768px) {
+      #en .store-info__info {
         font-size: 14px;
         line-height: 1.8; } }
 
@@ -8918,42 +9253,80 @@ a {
     line-height: 1.6;
     font-family: "Legacy Serif Book", "I-OTF明朝オールドPro M", "IwaOMinPro-Md", serif; }
 
-.kurasi {
+#jp .kurasi {
   padding-top: 140px;
   margin-bottom: 140px; }
   @media screen and (max-width: 768px) {
-    .kurasi {
+    #jp .kurasi {
       padding-top: 125px;
       margin-bottom: 100px; } }
-  .kurasi__detail {
+  #jp .kurasi__detail {
     margin-top: 56px;
     font-family: "Legacy Serif Book", "I-OTF明朝オールドPro M", "IwaOMinPro-Md", serif;
     font-size: 15px;
     line-height: 1.9; }
     @media screen and (max-width: 768px) {
-      .kurasi__detail {
+      #jp .kurasi__detail {
         margin-top: 0;
         font-size: 14px;
         line-height: 1.8; } }
 
-.xiaoman {
+#en .kurasi {
+  padding-top: 140px;
+  margin-bottom: 140px; }
+  @media screen and (max-width: 768px) {
+    #en .kurasi {
+      padding-top: 125px;
+      margin-bottom: 100px; } }
+  #en .kurasi__detail {
+    margin-top: 56px;
+    font-family: "Legacy Serif Book", serif;
+    font-size: 18px;
+    line-height: 1.5; }
+    @media screen and (max-width: 768px) {
+      #en .kurasi__detail {
+        margin-top: 0;
+        font-size: 16px;
+        line-height: 1.4; } }
+
+#jp .xiaoman {
   padding-top: 140px; }
   @media screen and (max-width: 768px) {
-    .xiaoman {
+    #jp .xiaoman {
       padding-top: 75px; } }
-  .xiaoman__photo {
+  #jp .xiaoman__photo {
     margin-top: 56px;
     align-items: flex-end; }
     @media screen and (max-width: 768px) {
-      .xiaoman__photo {
+      #jp .xiaoman__photo {
         margin-top: 0; } }
-  .xiaoman__detail {
+  #jp .xiaoman__detail {
     margin-top: 56px;
     font-size: 15px;
     font-family: "Legacy Serif Book", "I-OTF明朝オールドPro M", "IwaOMinPro-Md", serif;
     line-height: 1.9; }
     @media screen and (max-width: 768px) {
-      .xiaoman__detail {
+      #jp .xiaoman__detail {
+        margin-top: 25px; } }
+
+#en .xiaoman {
+  padding-top: 140px; }
+  @media screen and (max-width: 768px) {
+    #en .xiaoman {
+      padding-top: 75px; } }
+  #en .xiaoman__photo {
+    margin-top: 56px;
+    align-items: flex-end; }
+    @media screen and (max-width: 768px) {
+      #en .xiaoman__photo {
+        margin-top: 0; } }
+  #en .xiaoman__detail {
+    margin-top: 56px;
+    font-size: 18px;
+    font-family: "Legacy Serif Book", serif;
+    line-height: 1.5; }
+    @media screen and (max-width: 768px) {
+      #en .xiaoman__detail {
         margin-top: 25px; } }
 
 .xiaoman-name {

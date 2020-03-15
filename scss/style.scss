@@ -34,8 +34,9 @@
 	src: url("../fonts/xiaoman-Regular.eot") format("eot"), url("../fonts/xiaoman-Regular.woff2") format("woff2"), url("../fonts/xiaoman-Regular.woff") format("woff");
 }
 
-$eg-medium: 'Legacy Serif Medium',
-serif;
+$eg-medium: 'Legacy Serif Medium', serif;
+$eg-book: 'Legacy Serif Book', serif;
+$eg-italic: 'Legacy Serif Book Italic', serif;
 $anime: cubic-bezier(0.215, 0.61, 0.355, 1) all 0.5s;
 $jp-body: 'Legacy Serif Book',
 "I-OTF明朝オールドPro M",
@@ -141,7 +142,7 @@ a {
 	}
 }
 
-.content-index {
+#jp .content-index {
 	&__link {
 		font-size: 32px;
 		margin-bottom: 18px;
@@ -169,6 +170,47 @@ a {
 			transition: $anime;
 			color: white;
 			font-family: $jp-bold;
+
+			@include mobile {
+				font-size: 18px;
+				margin-top: -13px;
+				margin-bottom: 13px;
+			}
+
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+}
+#en .content-index {
+	&__link {
+		font-size: 32px;
+		margin-bottom: 18px;
+		letter-spacing: 0.05em;
+		transition: $anime;
+		color: white;
+		font-family: $jp-thin;
+
+		@include mobile {
+			font-size: 27px;
+			margin-bottom: 13px;
+		}
+
+		&:hover {
+			opacity: 0.5;
+		}
+
+		&--sub {
+			margin-top: -18px;
+			margin-bottom: 18px;
+			font-size: 22px;
+			line-height: 1.8;
+			letter-spacing: 0.05em;
+			margin-left: 27px;
+			transition: $anime;
+			color: white;
+			font-family: $eg-italic;
 
 			@include mobile {
 				font-size: 18px;
@@ -239,14 +281,16 @@ a {
 }
 
 .language {
-	font-family: $eg-medium;
+	font-family: $jp-gothic;
 	color: white;
 	text-align: right;
 	margin-top: 10px;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.1em;
+	font-size: 0.9em;
 
 	&__select {
 		color: white;
+		margin-left: 5px;
 
 		&--inactive {
 			color: rgba(255, 255, 255, 0.5);
@@ -339,7 +383,7 @@ a {
 	}
 }
 
-.head {
+#jp .head, #tc .head {
 	&__headline {
 		font-family: $jp-thin;
 		writing-mode: vertical-rl;
@@ -353,6 +397,16 @@ a {
 			writing-mode: horizontal-tb;
 			text-align: center;
 			font-size: 24pt;
+		}
+	}
+}
+#en .head{
+	&__headline{
+		font-family: $eg-italic;
+		font-size: 28pt;
+		@include mobile{
+			font-size: 24pt;
+			text-align: center;
 		}
 	}
 }
@@ -398,7 +452,7 @@ a {
 	}
 }
 
-.exhibit-content {
+#jp .exhibit-content {
 	background-color: $darkgray;
 	padding: 25px 32px;
 	position: relative;
@@ -517,6 +571,125 @@ a {
 		}
 	}
 }
+#en .exhibit-content {
+	background-color: $darkgray;
+	padding: 25px 32px;
+	position: relative;
+	margin-bottom: 28px;
+	z-index: 0;
+
+	@include touch {
+		padding: 15px;
+		margin-bottom: 50px;
+	}
+
+	&:before {
+		content: '';
+		z-index: 0;
+		position: absolute;
+		height: 30px;
+		width: 30px;
+		background-color: $darkgray;
+		top: 50%;
+		right: 0;
+		transform: translate(-50%, -50%) rotate(45deg);
+		transition: $anime;
+
+		@include touch {
+			display: none;
+		}
+	}
+
+	&:hover {
+		&:before {
+			transform: translate(50%, -50%) rotate(45deg);
+		}
+	}
+
+	&__place {
+		position: relative;
+		z-index: 1;
+		color: white;
+		font-family: $eg-medium;
+		font-size: 16px;
+		letter-spacing: 3px;
+		margin-bottom: 20px;
+		font-variant: small-caps;
+
+		@include touch {
+			margin-bottom: 15px;
+		}
+
+		&--right {
+			@extend .exhibit-content__place;
+			text-align: right;
+			@include touch{
+				text-align: left;
+			}
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 1;
+		color: white;
+		font-family: $eg-italic;
+		font-size: 30px;
+		line-height: 1.3;
+		margin-bottom: 5px;
+
+		@include touch {
+			font-size: 21px;
+		}
+
+		&--right {
+			@extend .exhibit-content__title;
+			text-align: right;
+			@include touch{
+				text-align: left;
+			}
+		}
+	}
+
+	&__period {
+		position: relative;
+		z-index: 1;
+		color: white;
+		font-family: $eg-medium;
+		font-size: 17px;
+		font-feature-settings: 'pnum'on, 'onum'on;
+		letter-spacing: 1px;
+
+		&--right {
+			@extend .exhibit-content__period;
+			text-align: right;
+			@include touch{
+				text-align: left;
+			}
+		}
+	}
+
+	&--taipei {
+		@extend .exhibit-content;
+		margin-left: -150px;
+
+		@include touch {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	&--kyoto {
+		@extend .exhibit-content;
+		margin-right: -150px;
+		z-index: 2;
+
+		@include touch {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
 
 .devider {
 	height: 1px;
@@ -532,7 +705,7 @@ a {
 	}
 }
 
-.about-info {
+#jp .about-info {
 	text-align: center;
 	margin-top: 56px;
 	margin-bottom: 140px;
@@ -570,6 +743,57 @@ a {
 	&__link {
 		font-family: $jp-gothic;
 		font-size: 15px;
+		color: $darkgray;
+		border: 1px solid $darkgray;
+		padding: 12px 20px 9px;
+		transition: $anime;
+		letter-spacing: 1px;
+
+		&:hover {
+			background-color: $darkgray;
+			color: $main;
+		}
+	}
+}
+
+#en .about-info {
+	text-align: center;
+	margin-top: 56px;
+	margin-bottom: 140px;
+
+	@include mobile {
+		margin-top: 25px;
+		margin-bottom: 75px;
+	}
+
+	&__title {
+		font-family: $eg-medium;
+		font-size: 32px;
+
+		@include mobile {
+			font-size: 24px;
+			line-height: 2.3;
+		}
+	}
+
+	&__detail {
+		font-family: $eg-book;
+		font-size: 18px;
+		line-height: 1.5;
+		margin-top: 28px;
+		margin-bottom: 28px;
+
+		@include mobile {
+			font-size: 16px;
+			line-height: 1.4;
+			margin-top: 0;
+			margin-bottom: 25px;
+		}
+	}
+
+	&__link {
+		font-family: $jp-gothic;
+		font-size: 16px;
 		color: $darkgray;
 		border: 1px solid $darkgray;
 		padding: 12px 20px 9px;
@@ -628,7 +852,7 @@ a {
 	}
 }
 
-.shops-detail {
+#jp .shops-detail {
 	position: absolute;
 	bottom: 140px;
 
@@ -701,6 +925,107 @@ a {
 		color: white;
 		font-size: 15px;
 		line-height: 1.9;
+		font-family: $jp-body;
+		margin-bottom: 28px;
+
+		@include mobile {
+			font-size: 14px;
+			line-height: 1.8;
+			margin-bottom: 25px;
+		}
+	}
+
+	&__link {
+		font-family: $jp-gothic;
+		font-size: 15px;
+		color: white;
+		border: 1px solid white;
+		padding: 12px 20px 9px;
+		transition: $anime;
+		letter-spacing: 1px;
+
+		&:hover {
+			background-color: white;
+			color: $darkgray;
+		}
+	}
+}
+#en .shops-detail {
+	position: absolute;
+	bottom: 140px;
+
+	@include mobile {
+		bottom: 50px;
+		margin-right: 15px;
+	}
+
+	&__title {
+		color: white;
+		font-family: $jp-thin;
+		font-size: 48px;
+		position: relative;
+		display: inline-block;
+		padding-right: 16px;
+		margin-right: 14px;
+		float: left;
+		margin-bottom: 8px;
+
+		@include mobile {
+			font-size: 36px;
+			padding-right: 0;
+			margin-right: 0;
+			float: none;
+			margin-bottom: 0;
+			transform: translateX(-3px);
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: 1px;
+			height: 50px;
+			background-color: white;
+			right: 0;
+			top: 8px;
+
+			@include mobile {
+				display: none;
+			}
+		}
+
+		&--class {
+			color: white;
+			font-family: $jp-thin;
+			font-size: 42px;
+
+			@include mobile {
+				font-size: 36px;
+				transform: translateX(-3px);
+			}
+		}
+	}
+
+	&__type {
+		color: white;
+		font-family: $eg-medium;
+		font-size: 21px;
+		margin-top: 20px;
+		font-variant: small-caps;
+		letter-spacing: 0.1em;
+
+		@include mobile {
+			margin-top: 0;
+			font-size: 18px;
+			margin-bottom: 50px;
+		}
+	}
+
+	&__info {
+		max-width: 700px;
+		clear: left;
+		color: white;
+		font-size: 18px;
+		line-height: 1.5;
 		font-family: $jp-body;
 		margin-bottom: 28px;
 
@@ -804,7 +1129,7 @@ a {
 	}
 }
 
-.index-content {
+#jp .index-content {
 	margin-bottom: 84px;
 
 	@include mobile {
@@ -833,6 +1158,49 @@ a {
 		font-family: $jp-body;
 		font-size: 13px;
 		line-height: 1.5;
+		list-style: none;
+		margin-bottom: 9px;
+		transition: $anime;
+
+		@include mobile {
+			margin-bottom: 5px;
+		}
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}
+
+#en .index-content {
+	margin-bottom: 84px;
+
+	@include mobile {
+		margin-bottom: 25px;
+	}
+
+	&__title {
+		font-family: $jp-thin;
+		font-size: 24px;
+		margin-bottom: 28px;
+		transition: $anime;
+		border-bottom: 1px solid rgba(0, 0, 0, 0);
+		display: inline-block;
+
+		@include mobile {
+			font-size: 27px;
+			margin-bottom: 25px;
+		}
+
+		&:hover {
+			border-bottom: 1px solid $darkgray;
+		}
+	}
+
+	&__sub {
+		font-family: $jp-body;
+		font-size: 15px;
+		line-height: 1.2;
 		list-style: none;
 		margin-bottom: 9px;
 		transition: $anime;
@@ -902,7 +1270,7 @@ a {
 	}
 }
 
-.store-info {
+#jp .store-info {
 	position: absolute;
 	bottom: 56px;
 	width: 100%;
@@ -963,6 +1331,77 @@ a {
 		font-size: 15px;
 		line-height: 1.9;
 		font-family: $jp-body;
+
+		@include mobile {
+			font-size: 14px;
+			line-height: 1.8;
+		}
+	}
+}
+#en .store-info {
+	position: absolute;
+	bottom: 56px;
+	width: 100%;
+	text-align: center;
+
+	@include mobile {
+		bottom: 25px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	&__title {
+
+		color: white;
+		font-family: $jp-thin;
+		font-size: 48px;
+		position: relative;
+		margin-bottom: 0px;
+
+		@include mobile {
+			font-size: 27px;
+			margin-bottom: 10px;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: 50px;
+			height: 1px;
+			background-color: white;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0;
+
+			@include mobile {
+				display: none;
+			}
+		}
+	}
+
+	&__type {
+		color: white;
+		font-family: $jp-bold;
+		font-size: 21px;
+		margin-top: 10px;
+		margin-bottom: 28px;
+
+		@include mobile {
+			font-size: 18px;
+			margin-top: 0;
+			margin-bottom: 25px;
+		}
+	}
+
+	&__info {
+		clear: left;
+		color: white;
+		font-size: 17px;
+		line-height: 1.5;
+		font-family: $jp-body;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
 
 		@include mobile {
 			font-size: 14px;
@@ -1229,7 +1668,7 @@ a {
 	}
 }
 
-.kurasi {
+#jp .kurasi {
 	padding-top: 140px;
 	margin-bottom: 140px;
 
@@ -1251,8 +1690,30 @@ a {
 		}
 	}
 }
+#en .kurasi {
+	padding-top: 140px;
+	margin-bottom: 140px;
 
-.xiaoman {
+	@include mobile {
+		padding-top: 125px;
+		margin-bottom: 100px;
+	}
+
+	&__detail {
+		margin-top: 56px;
+		font-family: $eg-book;
+		font-size: 18px;
+		line-height: 1.5;
+
+		@include mobile {
+			margin-top: 0;
+			font-size: 16px;
+			line-height: 1.4;
+		}
+	}
+}
+
+#jp .xiaoman {
 	padding-top: 140px;
 
 	@include mobile {
@@ -1273,6 +1734,33 @@ a {
 		font-size: 15px;
 		font-family: $jp-body;
 		line-height: 1.9;
+
+		@include mobile {
+			margin-top: 25px;
+		}
+	}
+}
+#en .xiaoman {
+	padding-top: 140px;
+
+	@include mobile {
+		padding-top: 75px;
+	}
+
+	&__photo {
+		margin-top: 56px;
+		align-items: flex-end;
+
+		@include mobile {
+			margin-top: 0;
+		}
+	}
+
+	&__detail {
+		margin-top: 56px;
+		font-size: 18px;
+		font-family: $eg-book;
+		line-height: 1.5;
 
 		@include mobile {
 			margin-top: 25px;
